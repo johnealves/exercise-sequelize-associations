@@ -12,7 +12,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const PORT = process.env.PORT || 3000;
 
-app.use('/plans', routes.plansRouter);
+app.use('/plans', routes.plansRoute);
+app.use('/patients', routes.patientsRoute)
 
 app.use(error);
 

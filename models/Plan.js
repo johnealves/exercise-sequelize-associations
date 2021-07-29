@@ -1,7 +1,7 @@
 'use strict';
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  const Plans = sequelize.define('Plans', {
+  const Plan = sequelize.define('Plan', {
     plan_id: { type: DataTypes.INTEGER, primaryKey: true },
     coverage: DataTypes.STRING,
     price: DataTypes.DOUBLE,
@@ -10,5 +10,12 @@ module.exports = (sequelize, DataTypes) => {
     timestamps: false,
   });
 
-  return Plans;
+  Plan.associete = (models) => {
+    Plan.hasMany(models.Patient, {
+      foreignKey: 'plan_id',
+      as: 'patient',
+    })
+  }
+
+  return Plan;
 };
