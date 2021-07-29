@@ -6,6 +6,8 @@ router.use(bodyParser.json());
 
 const controllers = require('../controllers')
 
-router.get('/', controllers.listPatients);
+router.get('/', controllers.listAllPatients);
+router.get('/surgeries', controllers.listPatientsWithSurgeries);
+router.get('/:id', controllers.listPatientsById)
 
 module.exports = router;

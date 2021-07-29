@@ -1,9 +1,14 @@
 const listPlans = require('./listPlans');
 const listSurgery = require('./listSurgery');
-const listPatients = require('./listPatients');
+const { listAllPatients,
+  listPatientsById,
+  listPatientsWithSurgeries
+} = require('./listPatients');
 
 module.exports = {
   listPlans,
   listSurgery,
-  listPatients,
+  listAllPatients,
+  listPatientsById,
+  listPatientsWithSurgeries
 };
